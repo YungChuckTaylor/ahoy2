@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — AHOY</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="contact">
+  <div id="site-header"></div>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="kicker">Write to the desk</div>
+      <h1>Letters, not noise.</h1>
+      <p>Use the form for press, partnership, volunteering or a question about a campaign. Chapter addresses sit on the right. We answer within five working days.</p>
+    </div>
+  </section>
+  <section class="section" style="padding-top:36px">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="card" style="padding:22px">
+          <h3>Chapters</h3>
+          <p><b>Nigeria</b><br>14 Harbour Close, Agege, Lagos<br>+234 201 700 1840<br>lagos@ahoyyouths.org</p>
+          <p><b>Egypt</b><br>Circle Room, Downtown Cairo<br>cairo@ahoyyouths.org</p>
+          <p><b>Canada</b><br>Harbourfront Community Hub, Toronto<br>toronto@ahoyyouths.org</p>
+          <p class="mb0"><b>United Kingdom</b><br>East London bench desk<br>london@ahoyyouths.org</p>
+        </div>
+      </div>
+      <form class="card" id="form" style="padding:22px" onsubmit="return false">
+        <div class="field"><label>Name</label><input required id="n"></div>
+        <div class="field"><label>Email</label><input required type="email" id="e"></div>
+        <div class="field">
+          <label>About</label>
+          <select id="t">
+            <option>A campaign</option>
+            <option>Partnership</option>
+            <option>Volunteering</option>
+            <option>Press</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field"><label>Letter</label><textarea id="m" rows="6" required></textarea></div>
+        <button class="btn btn-navy" id="send">Send to the desk</button>
+        <p class="muted" id="done" style="display:none;margin-top:12px">Received. A steward will write back — this demo keeps the letter in your browser only.</p>
+      </form>
+    </div>
+  </section>
+  <div id="site-footer"></div>
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/common.js"></script>
+  <script>
+    document.getElementById("send").onclick = () => {
+      const n = document.getElementById("n").value.trim();
+      const e = document.getElementById("e").value.trim();
+      const m = document.getElementById("m").value.trim();
+      if (!n || !e || !m) { UI.toast("Please complete the letter."); return; }
+      const letters = JSON.parse(localStorage.getItem("ahoy.letters") || "[]");
+      letters.unshift({ n, e, t: document.getElementById("t").value, m, at: new Date().toISOString() });
+      localStorage.setItem("ahoy.letters", JSON.stringify(letters));
+      document.getElementById("done").style.display = "block";
+      UI.toast("Letter filed with the desk.");
+      document.getElementById("form").reset();
+    };
+  </script>
+</body>
+</html>

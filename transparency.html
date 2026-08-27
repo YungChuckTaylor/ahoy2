@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Where the Money Goes — AHOY</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="money">
+  <div id="site-header"></div>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="kicker">Financial transparency</div>
+      <h1>Where the money goes</h1>
+      <p>A public breakdown of AHOY’s books. Headline allocation is fixed by policy: 80% direct youth programmes, 12% operations, 8% community outreach. Choose a year to see the actual dollars, the country split, and the statements you can take away.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:36px">
+    <div class="wrap">
+      <div class="year-tabs" id="years"></div>
+      <div class="stat-cards" id="stats"></div>
+
+      <div class="grid-2" style="margin-bottom:22px">
+        <div class="chart-card">
+          <h3>Headline allocation</h3>
+          <p class="muted" id="alloc-note">Policy split applied to programme spend.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center">
+            <canvas id="pie" height="240"></canvas>
+            <div class="legend" id="legend"></div>
+          </div>
+        </div>
+        <div class="chart-card">
+          <h3>Spend by country</h3>
+          <p class="muted">Where the programme dollar actually landed.</p>
+          <div class="bar-col" id="countries"></div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:22px">
+        <div class="chart-card">
+          <h3>Inside the 80% — programme lines</h3>
+          <canvas id="bars" height="220"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Monthly spend</h3>
+          <p class="muted">USD thousands. 2025 shows January–August.</p>
+          <canvas id="line" height="220"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card" style="margin-bottom:36px">
+        <h3>Operations, in plain words</h3>
+        <p class="muted">The 12% is not a mystery. It is four desks, an audit, insurance and the archive that makes this page possible.</p>
+        <div class="bar-col" id="ops"></div>
+      </div>
+
+      <div id="reports">
+        <div class="section-h">
+          <div>
+            <div class="kicker" style="color:var(--gold-600)">Downloadable archive</div>
+            <h2>Annual reports &amp; audited statements</h2>
+            <div class="gold-rule"></div>
+          </div>
+          <p>Open in the browser, then print or save as PDF from your browser’s print dialog.</p>
+        </div>
+        <div id="report-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/transparency.js"></script>
+</body>
+</html>

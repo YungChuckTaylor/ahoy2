@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AHOY — Association of Humble and Obedient Youths</title>
+  <meta name="description" content="A youth fellowship across Nigeria, Egypt, Canada and the United Kingdom. We publish the work, the visits, and where the money goes.">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="home">
+  <div id="site-header"></div>
+
+  <section class="hero">
+    <div class="hero-media">
+      <img src="assets/images/hero-youths.jpg" alt="Young people from AHOY chapters gathered by the water">
+    </div>
+    <div class="hero-inner">
+      <div class="kicker">Association of Humble and Obedient Youths</div>
+      <h1>Steered by humility.<br><em>Powered by service.</em></h1>
+      <p class="lede">Four countries, one discipline: do the work, write it down, show where every coin went. AHOY is a fellowship of youths who would rather be useful than seen.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="campaigns.html">Fund a specific need</a>
+        <a class="btn btn-ghost" href="repository.html">Open the verification archive</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>4</b><span>Chapters — NG, EG, CA, UK</span></div>
+        <div><b>1,184</b><span>Unique youths served in 2024</span></div>
+        <div><b>80%</b><span>Of spend on direct programmes</span></div>
+        <div><b>2018</b><span>Year the wheel was first turned</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-h">
+        <div>
+          <div class="kicker" style="color:var(--gold-600)">Live campaigns</div>
+          <h2>Give to a need, not a fog</h2>
+          <div class="gold-rule"></div>
+        </div>
+        <p>Every campaign has a cost sheet, a progress bar and a public archive trail. No generic donate button without a destination.</p>
+      </div>
+      <div class="grid-3" id="home-campaigns"></div>
+      <p class="mt"><a class="btn btn-ghost-ink" href="campaigns.html">See all open campaigns</a></p>
+    </div>
+  </section>
+
+  <section class="money-band section">
+    <div class="wrap split">
+      <div>
+        <div class="kicker" style="color:var(--gold-600)">Where the money goes</div>
+        <h2>Eighty cents on the dollar reach a youth programme.</h2>
+        <div class="gold-rule"></div>
+        <p class="muted">The remaining twenty cents keep the desks, the audit and the neighbour-facing work honest. Tap through to the full dashboard for year-by-year charts, country splits and downloadable statements.</p>
+        <div class="alloc-list" id="home-alloc"></div>
+        <a class="btn btn-navy" href="transparency.html">Open the transparency dashboard</a>
+      </div>
+      <div class="donut-wrap">
+        <canvas id="home-donut" width="280" height="280"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-h">
+        <div>
+          <div class="kicker" style="color:var(--gold-600)">Verification archive</div>
+          <h2>If it happened, it is filed.</h2>
+          <div class="gold-rule"></div>
+        </div>
+        <p>Projects, visits, photographs, partnerships and reports — tagged by country, signed by a steward, open to anyone.</p>
+      </div>
+      <div class="grid-3" id="home-archive"></div>
+      <p class="mt"><a class="btn btn-ghost-ink" href="repository.html">Browse the full archive</a></p>
+    </div>
+  </section>
+
+  <section class="countries">
+    <div class="wrap">
+      <div class="section-h">
+        <div>
+          <div class="kicker">Chapters</div>
+          <h2 style="color:#fff">One fellowship, four harbours.</h2>
+        </div>
+        <p style="color:rgba(255,255,255,.6)">Each chapter keeps its own register. The archive is shared.</p>
+      </div>
+      <div class="grid-4">
+        <a class="country-tile" href="repository.html?country=nigeria">
+          <div class="flag">🇳🇬</div>
+          <h3>Nigeria</h3>
+          <p>Lagos · Kano · Abuja — our oldest and largest chapter.</p>
+        </a>
+        <a class="country-tile" href="repository.html?country=egypt">
+          <div class="flag">🇪🇬</div>
+          <h3>Egypt</h3>
+          <p>Cairo · Alexandria — circles, night school, sewing cohorts.</p>
+        </a>
+        <a class="country-tile" href="repository.html?country=canada">
+          <div class="flag">🇨🇦</div>
+          <h3>Canada</h3>
+          <p>Toronto · Vancouver — winter camps and newcomer orientation.</p>
+        </a>
+        <a class="country-tile" href="repository.html?country=uk">
+          <div class="flag">🇬🇧</div>
+          <h3>United Kingdom</h3>
+          <p>London · Manchester — apprenticeship stipends and bench visits.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <img src="assets/images/training-workshop.jpg" alt="AHOY training circle" style="border-radius:24px;aspect-ratio:4/3;object-fit:cover;width:100%">
+      </div>
+      <div>
+        <div class="kicker" style="color:var(--gold-600)">How we work</div>
+        <h2>Hands on the wheel. Hearts in the work.</h2>
+        <div class="gold-rule"></div>
+        <p>AHOY was formed by youths who were tired of being photographed on rented stages. We count a person once. We do not pay sitting allowances. Field visits are made by a desk that does not run the project.</p>
+        <p class="muted">The ship's wheel on our seal is not decoration. It is a reminder that someone must steer, and that steering is a duty, not a performance.</p>
+        <a class="btn btn-navy" href="about.html">Read the mission</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/common.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const camps = AHOY.campaigns().slice(0, 3).map(UI.campaignCard).join("");
+      document.getElementById("home-campaigns").innerHTML = camps;
+      const latest = AHOY.items({}).slice(0, 3).map(UI.itemCard).join("");
+      document.getElementById("home-archive").innerHTML = latest;
+      document.getElementById("home-archive").querySelectorAll("[data-open]").forEach(el => {
+        el.style.cursor = "pointer";
+        el.addEventListener("click", () => location.href = "repository.html?item=" + el.dataset.open);
+      });
+
+      const h = AHOY.get().finances.headline;
+      document.getElementById("home-alloc").innerHTML = h.map(x => `
+        <div class="alloc">
+          <div>${x.label}</div>
+          <div class="bar"><span style="width:${x.pct}%;background:${x.color}"></span></div>
+          <b>${x.pct}%</b>
+        </div>`).join("");
+
+      const ctx = document.getElementById("home-donut");
+      new Chart(ctx, {
+        type: "doughnut",
+        data: {
+          labels: h.map(x => x.label),
+          datasets: [{ data: h.map(x => x.pct), backgroundColor: h.map(x => x.color), borderWidth: 0, hoverOffset: 6 }]
+        },
+        options: {
+          cutout: "68%",
+          plugins: {
+            legend: { display: false },
+            tooltip: { callbacks: { label: (c) => ` ${c.label}: ${c.raw}%` } }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

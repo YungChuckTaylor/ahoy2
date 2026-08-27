@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campaigns — AHOY Micro-fundraising</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="give">
+  <div id="site-header"></div>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="kicker">Project-specific fundraising</div>
+      <h1>Pick a need. Watch the bar move.</h1>
+      <p>Each campaign is a single, named piece of work — kits, stipends, a room, a camp. You will see the cost sheet, the live total, and the payment method you prefer: card, PayPal, Nigerian bank / USSD, or crypto.</p>
+    </div>
+  </section>
+  <section class="section" style="padding-top:36px">
+    <div class="wrap">
+      <div class="filters" id="cf"></div>
+      <div class="grid-3" id="list"></div>
+    </div>
+  </section>
+  <div id="site-footer"></div>
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/common.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let country = "all";
+      const cf = document.getElementById("cf");
+      const chips = [{id:"all", name:"All countries", flag:""}, ...AHOY.countries()];
+      cf.innerHTML = chips.map(c => `<button class="chip ${c.id==="all"?"on":""}" data-c="${c.id}">${c.flag||""} ${c.name}</button>`).join("");
+      function draw() {
+        const list = AHOY.campaigns().filter(c => country==="all" || c.country===country);
+        document.getElementById("list").innerHTML = list.map(UI.campaignCard).join("");
+      }
+      cf.addEventListener("click", e => {
+        const b = e.target.closest("[data-c]");
+        if (!b) return;
+        country = b.dataset.c;
+        cf.querySelectorAll(".chip").forEach(x => x.classList.toggle("on", x===b));
+        draw();
+      });
+      draw();
+    });
+  </script>
+</body>
+</html>
